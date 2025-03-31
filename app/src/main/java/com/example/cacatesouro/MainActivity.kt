@@ -7,9 +7,14 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.cacatesouro.objects.charadaPadrao
 import com.example.cacatesouro.screen.HomeScreen
 import com.example.cacatesouro.screen.Pista1Screen
 import com.example.cacatesouro.screen.Pista2Screen
@@ -30,6 +35,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun cacaTesouro(){
         val navController = rememberNavController()
+        var charadaAtual by remember { mutableStateOf(charadaPadrao) }
 
             NavHost(
                 navController = navController,
